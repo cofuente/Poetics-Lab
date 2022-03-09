@@ -1,0 +1,187 @@
+\documentclass[draft]{article}
+\usepackage{shapepar}
+
+%%%%%%%%%%%%%%%%%%% code I have yet to fully contextualize
+
+\renewcommand{\topfraction}{.85} 
+\renewcommand{\bottomfraction}{.7}
+\renewcommand{\textfraction}{.15} 
+\renewcommand{\floatpagefraction}{.66}
+\renewcommand{\dbltopfraction}{.66} 
+\renewcommand{\dblfloatpagefraction}{.66}
+\raggedbottom
+\addtolength{\topskip}{0pt plus 8pt}
+
+\newcommand\configpar[6]{\par\penalty-50
+ \vskip 0pt plus 12pt \penalty 50 \vskip 0pt plus -12pt
+ \begingroup\samepage
+ \paragraph*{\textbackslash #1} #2\unskip\strut\\*
+ \begin{tabular}{@{}p{.15\linewidth}@{}p{.85\linewidth}@{}}
+ Type: \ & \rightskip\fill #3\\
+ Default: \ & \rightskip\fill #4\\
+ Set with: \ & \rightskip\fill #5\\
+ Example: \ & \rightskip\fill #6
+ \end{tabular}
+ \par \endgroup
+}
+
+\makeatletter
+
+\AtBeginDocument{%
+  {\immediate\write\@auxout{\catcode\number\string`\_ \string\active}}%
+  \catcode\string`\_\string=\active
+  \edef\ttdefault{\ttdefault}%
+}
+
+\newcommand{\BreakableUnderscore}{\leavevmode\nobreak\hskip\z@skip
+ \ifx\f@family\ttdefault \string_\else \textunderscore\fi
+ \usc@dischyph\nobreak\hskip\z@skip}
+
+\DeclareRobustCommand{\_}{%
+  \ifmmode \nfss@text{\textunderscore}\else \BreakableUnderscore \fi}
+
+\let\usc@dischyph\@dischyph
+\makeatother
+
+
+\title{Ecopoetics Groundwork}
+\author{Ira Livingston}
+\date{v0.3 \ Mar 2022}
+
+\begin{document}
+
+\def\Meaningless#1>{}
+\catcode`\"=\active
+\def\startV{\leavevmode\begingroup
+  \ifdim 0pt=\lastskip\penalty200 \fi
+  \catcode`\{11 \catcode`\}11 \catcode`\%11
+  \moreV}
+\long\def\moreV#1"{%
+  \def\LtxCode{#1}%
+  \texttt{\ignorespaces
+      \expandafter\Meaningless\meaning\LtxCode
+      \unskip}%
+  \endgroup}
+\let"\startV
+
+\catcode`\<=\active
+\def<#1>{\ensuremath{\langle\mbox{\textsl{#1}}\rangle}}
+%%%%%%%%%%%%%%%%%%% end code I have yet to fully contextualize
+
+\maketitle
+\subsection{example skull with proshap.py}
+\gdef\bassshape{{9.4}{0}b{9.4}
+\\{0}t{7.6}{6.8}
+\\{0.8}t{5.2}{11.6}
+\\{1.6}t{4.4}{13.2}
+\\{2.4}t{4.0}{14.0}
+\\{3.2}t{3.6}{4.933333}st{8.533333}{4.933333}st{13.46666}{4.933333}
+\\{4.0}t{3.6}{2.4}t{9.6}{2.8}t{16.4}{2.4}
+\\{6.4}t{3.6}{2.0}t{10.0}{2.0}t{16.8}{2.0}
+\\{8.8}t{3.6}{2.4}t{9.6}{1.4}st{11.0}{1.4}t{16.4}{2.0}
+\\{11.2}t{3.6}{3.4}jt{7.0}{3.4}t{11.6}{3.4}jt{15.0}{3.4}
+\\{12.8}t{4.0}{6.0}t{12.0}{6.0}
+\\{14.4}t{4.4}{5.2}t{12.4}{5.2}
+\\{16.0}t{4.8}{6.0}jt{10.8}{6.0}
+\\{16.8}t{5.2}{5.6}st{10.8}{5.6}
+\\{17.6}t{5.6}{0.8}t{14.8}{1.2}
+\\{19.2}t{6.0}{2.4}t{12.0}{3.6}
+\\{20.8}t{6.4}{4.4}jt{10.8}{4.4}
+\\{22.4}e{9.4}}
+
+\shapepar\bassshape
+Ecopoetics Groundwork is a conceptual primer for the transdisciplinary enterprise of ecopoetics.  Primarily relying on examples rather than abstractions as such, the book aims to do the brain-rewiring required to ground ecopoetics in an anarchist philosophy of open systems.  It explores reparative practices that work on and through language and its kinship with complex and evolving ecologies, drawing on the Kabbalistic practice of tikkun (repair), which links activism with more arcane work of meaning-making.  Starting from Wittgenstein's mandate that "the whole of language has to be thoroughly plowed up," groundwork refers to an overturning and opening up of conceptual and imagistic grammar that deconstructs modernist dualities among nature, humanity, and divinity.  After this introduction, the chapters follow ecopoetics through the realms of language (two), visual art and architecture (three), science (four), religion and mysticism (five), and poetry (six), accompanied by key poetic texts at every turn.
+
+\subsection{example faceshape with proshap.py}
+
+\def\faceshape{%
+{36.8512}%
+{-0.519031}b{36.8512}\\%
+{-0.259516}t{33.391}{6.92042}\\%
+{0.432526}t{30.1038}{13.4948}\\%
+{1.55709}t{26.8166}{20.0692}\\%
+{3.11419}t{23.7889}{26.1246}\\%
+{5.10381}t{21.0208}{31.6609}\\%
+{7.43945}t{18.5121}{36.6782}\\%
+{10.1211}t{16.3495}{41.0035}\\%
+{11.5917}t{15.4412}{11.2024}st{26.6436}{20.5017}st{47.1453}{11.1159}\\%
+{11.6782}t{15.3877}{10.6503}t{27.2491}{19.2907}t{47.7509}{10.5638}\\%
+{11.7647}t{15.3343}{10.0117}t{27.9412}{17.9066}t{48.4429}{9.9252}\\%
+{12.0242}t{15.174}{9.56646}t{28.5467}{16.6955}t{49.0484}{9.47995}\\%
+{12.2837}t{15.0137}{9.12121}t{29.1522}{15.4844}t{49.654}{9.0347}\\%
+{12.6298}t{14.8}{8.8159}t{29.6713}{14.4464}t{50.173}{8.72939}\\%
+{13.0623}t{14.5329}{8.72261}t{30.0317}{13.7255}t{50.5334}{8.6361}\\%
+{13.1488}t{14.4968}{8.68656}t{30.1038}{13.5813}t{50.6055}{8.60006}\\%
+{13.5813}t{14.3166}{8.43426}t{30.5363}{12.7163}t{51.0381}{8.34775}\\%
+{14.1869}t{14.0643}{8.34054}t{30.8824}{12.0242}t{51.3841}{8.25404}\\%
+{14.7924}t{13.812}{8.33333}t{31.1419}{11.5052}t{51.6436}{8.24683}\\%
+{15.3979}t{13.5597}{8.41263}t{31.3149}{11.1592}t{51.8166}{8.32612}\\%
+{16.0035}t{13.3074}{8.57843}t{31.4014}{10.9862}t{51.9031}{8.49193}\\%
+{16.1765}t{13.2353}{8.65052}t{31.4014}{10.9862}t{51.9031}{8.56401}\\%
+{16.6955}t{13.085}{8.80077}t{31.4014}{10.9862}t{51.9031}{8.71426}\\%
+{17.301}t{12.9098}{9.06256}t{31.3149}{11.1592}t{51.8166}{8.97605}\\%
+{17.9066}t{12.7345}{9.41085}t{31.1419}{11.5052}t{51.6436}{9.32435}\\%
+{18.5121}t{12.5592}{9.84566}t{30.8824}{12.0242}t{51.3841}{9.75915}\\%
+{19.1176}t{12.3839}{10.367}t{30.5363}{12.7163}t{51.0381}{10.2805}\\%
+{19.4637}t{12.2837}{10.8131}t{30.1903}{13.4083}t{50.692}{10.7266}\\%
+{19.5502}t{12.2726}{10.9107}t{30.1038}{13.5813}t{50.6055}{10.8242}\\%
+{20.0692}t{12.2061}{11.4098}t{29.6713}{14.4464}t{50.173}{11.3233}\\%
+{20.4152}t{12.1617}{11.9732}t{29.1522}{15.4844}t{49.654}{11.8867}\\%
+{20.6747}t{12.1285}{12.612}t{28.5467}{16.6955}t{49.0484}{12.5255}\\%
+{20.9343}t{12.0952}{13.2508}t{27.9412}{17.9066}t{48.4429}{13.1643}\\%
+{21.0208}t{12.0841}{13.954}t{27.2491}{19.2907}t{47.7509}{13.8674}\\%
+{21.1073}t{12.073}{14.5706}jt{26.6436}{20.5017}jt{47.1453}{14.4841}\\%
+{22.8374}t{11.8512}{50}\\%
+{26.2976}t{11.8512}{50}\\%
+{29.6713}t{12.2837}{49.1349}\\%
+{30.7093}t{12.5842}{41.049}st{53.6332}{7.48497}\\%
+{30.7093}t{12.5842}{7.48498}t{53.6332}{7.48497}\\%
+{31.0554}t{12.6844}{7.50517}t{53.5001}{7.51789}\\%
+{31.0554}t{12.6844}{7.50517}jt{20.1896}{40.8285}\\%
+{31.0937}t{12.6955}{7.5074}st{20.2029}{40.804}\\%
+{31.1067}t{12.6993}{7.50816}t{20.2189}{33.2615}st{53.4804}{7.52278}\\%
+{32.1799}t{13.0099}{7.57079}t{21.5398}{30.5544}t{53.0676}{7.62489}\\%
+{32.699}t{13.1602}{7.60107}t{22.3183}{29.1054}t{52.868}{7.67427}\\%
+{32.9585}t{13.2353}{7.66652}t{22.7076}{28.3809}t{52.7682}{7.69896}\\%
+{33.1315}t{13.3074}{7.68815}t{22.9671}{27.8979}t{52.6782}{7.71684}\\%
+{34.083}t{13.7039}{7.80709}t{24.3945}{24.8054}t{52.1834}{7.81517}\\%
+{34.7751}t{13.9922}{7.8936}t{25.9007}{22.0881}t{51.8235}{7.88668}\\%
+{34.8616}t{14.0283}{7.91397}t{26.0889}{21.7484}t{51.7785}{7.89562}\\%
+{35.1211}t{14.1364}{7.97509}t{26.6538}{20.5262}t{51.6436}{7.92243}\\%
+{35.5536}t{14.3166}{8.07695}t{27.5952}{18.489}t{51.329}{8.05678}\\%
+{36.0727}t{14.5329}{8.19919}t{29.1123}{15.657}t{50.9516}{8.21799}\\%
+{36.1592}t{14.5863}{8.20217}t{29.3652}{15.185}t{50.8886}{8.22748}\\%
+{36.6782}t{14.9069}{8.2201}t{30.8824}{11.4187}t{50.5112}{8.28437}\\%
+{36.7647}t{14.9603}{8.22308}t{31.4446}{10.4815}t{50.4483}{8.29386}\\%
+{36.9377}t{15.0672}{8.28058}t{32.5692}{8.60727}t{50.3224}{8.31282}\\%
+{37.0242}t{15.1206}{8.30933}t{33.1315}{7.37024}t{50.2595}{8.32231}\\%
+{37.1972}t{15.2275}{8.36683}t{34.2561}{4.89619}t{50.0952}{8.37981}\\%
+{37.3702}t{15.3343}{8.42433}e{37.8028}t{49.9308}{8.43731}\\%
+{38.4948}t{16.0289}{8.79809}t{48.8625}{8.81106}\\%
+{38.7543}t{16.1892}{8.94057}t{48.6159}{8.89732}\\%
+{39.0138}t{16.3495}{9.08304}t{48.2953}{9.0576}\\%
+{40.0519}t{17.1866}{9.45697}t{47.013}{9.50277}\\%
+{40.2249}t{17.3262}{9.60168}t{46.7993}{9.57696}\\%
+{41.263}t{18.1633}{10.4699}t{45.0198}{10.5194}\\%
+{41.436}t{18.3028}{10.7393}t{44.7232}{10.6764}\\%
+{41.6955}t{18.5121}{11.1434}t{44.1334}{11.0569}\\%
+{42.2145}t{19.0696}{11.8128}t{42.9538}{11.6791}\\%
+{42.3875}t{19.2554}{12.1892}t{42.5606}{11.8865}\\%
+{42.9066}t{19.8129}{13.3186}t{40.5586}{13.331}\\%
+{42.9931}t{19.9058}{13.8096}t{40.2249}{13.5717}\\%
+{43.2526}t{20.1845}{15.2826}t{37.8893}{15.6286}\\%
+{43.2526}t{20.1845}{15.2826}jt{35.4671}{18.0508}\\%
+{44.0311}t{21.0208}{31.6609}\\%
+{46.0208}t{23.7889}{26.1246}\\%
+{47.5779}t{26.8166}{20.0692}\\%
+{48.7024}t{30.1038}{13.4948}\\%
+{49.3945}t{33.391}{6.92042}\\%
+{49.654}e{36.8512}%
+}
+
+\hyphenation{trans-fig shape-patch}
+
+\shapepar\faceshape
+I begin with a bit of a poem, the way a rabbi or preacher would start with a biblical verse.  Today's sermon is drawn from Wallace Stevens' massively canonical poem "The Idea of Order at Key West," in which two men philosophize as they watch and listen to a woman singing at the seaside, and they are struck by the sense that. . . there was no world for her Except the one she sang and, singing, made. The men are trying to come to terms with what, if anything, the singing (standing for art, language and consciousness generally) does to the world-- its relationship with the sea, and the question of who dances to whose tune.  As in Stevens' poem "Anecdote of the Jar," in which the simple placement of an empty glass jar on a hill has somehow organized the wilderness around it and has taken "dominion everywhere," the effect of her singing is both vanishingly subtle and total; the sea and the night sky are harmonized, enchanted, and thrown into mystical perspective by it. What can be the effect of human meaning-making on the world, and how do language and art participate in shaping it?  An open, high-stakes question for us in the 21st century, and for ecopoetics. Part of the point of Stevens' poem seems to be how philosophy-- which Stevens codes as masculine-- falls short of art-- which he codes as feminine-- but the poet, by folding philosophy back into art in the form of the poem, manages to perform a transcending synthesis.  It's an old Wordsworthian move: a kind of dialectical masculinism, starting with the binary distinctions of culture and nature, singer and sea.  The poet is the woman singing and the men philosophizing. Or does he attribute this synthesis to the singer?  It's hard to tell. The point of "no world for her / Except the one she sang" seems to be that consciousness and language alienate us from the natural world (we are "an unhappy people in a happy world" as Stevens put it elsewhere) and we are thus obliged to make our own world.  If singing were a mere elaboration of the rhythms of human breathing, it would remain a sibling phenomenon with the waves, a "heaving speech of air, a summer sound / Repeated in a summer without end,"
+
+\end{document}

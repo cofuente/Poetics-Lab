@@ -1,0 +1,126 @@
+\documentclass[draft]{article}
+\usepackage{shapepar}
+
+\title{Ecopoetics Groundwork}
+\author{Ira Livingston}
+\date{v0.6 \ Mar 2022}
+
+\begin{document}
+
+
+\maketitle
+\subsection{proshap.py by Man\-uel Gu\-ti\-er\-rez Al\-ga\-ba}
+\gdef\bassshape{{9.4}{0}b{9.4}
+\\{0}t{7.6}{6.8}
+\\{0.8}t{5.2}{11.6}
+\\{1.6}t{4.4}{13.2}
+\\{2.4}t{4.0}{14.0}
+\\{3.2}t{3.6}{4.933333}st{8.533333}{4.933333}st{13.46666}{4.933333}
+\\{4.0}t{3.6}{2.4}t{9.6}{2.8}t{16.4}{2.4}
+\\{6.4}t{3.6}{2.0}t{10.0}{2.0}t{16.8}{2.0}
+\\{8.8}t{3.6}{2.4}t{9.6}{1.4}st{11.0}{1.4}t{16.4}{2.0}
+\\{11.2}t{3.6}{3.4}jt{7.0}{3.4}t{11.6}{3.4}jt{15.0}{3.4}
+\\{12.8}t{4.0}{6.0}t{12.0}{6.0}
+\\{14.4}t{4.4}{5.2}t{12.4}{5.2}
+\\{16.0}t{4.8}{6.0}jt{10.8}{6.0}
+\\{16.8}t{5.2}{5.6}st{10.8}{5.6}
+\\{17.6}t{5.6}{0.8}t{14.8}{1.2}
+\\{19.2}t{6.0}{2.4}t{12.0}{3.6}
+\\{20.8}t{6.4}{4.4}jt{10.8}{4.4}
+\\{22.4}e{9.4}}
+
+
+\shapepar\bassshape
+proshap.py (ver 1.1) is a python script written by Man\-uel
+Gu\-ti\-er\-rez Al\-ga\-ba to produce shape definitions from rough
+`ascii art'.  There is no instruction manual, so here are Donald
+Arseneau's observations. There is not much of a user interface; look
+in proshap.py (which is a plain text file) and see how the various
+`test' shapes are defined (note the triple-double quotes).  Choose
+one of them, or add a new one, then change the line `test = test3' to select
+the desired picture.  Execute `python proshap.py' which will output a
+definition of "\bassshape" to the screen and to the file `result.tex'.
+The goul\-ish face you see here is the test3 shape.  You should be
+aware that the characters in the ascii input are treated as square,
+even though they are taller than they are wide, so the output shape
+specification will be taller and thinner than the input text.  There
+also seems to be a problem with all `bottoms': flat bottoms of text
+blocks and of holes are expanded downwards to end at a point.  Compare
+this face to the original face in proshap.py.  Warning: These
+instructions and observations are probably wrong; the author does not
+program in python so can't even read the code properly.  For now, look
+for proshap.py bundled with shapepar.sty.
+
+\subsection{proshap.py by Man\-uel Gu\-ti\-er\-rez Al\-ga\-ba}
+\begin{minipage}{0.2\textwidth}
+\gdef\bassshape{{9.4}{0}b{9.4}
+\\{0}t{5.2}{6.8}
+\\{4.0}t{5.2}{6.8}
+\\{6.4}t{5.2}{6.8}
+\\{12.8}t{5.2}{6.8}
+\\{14.4}t{5.2}{6.8}
+\\{16.8}t{5.2}{5.6}st{10.8}{5.6}
+\\{17.6}t{5.2}{0.8}t{14.8}{1.2}
+\\{19.2}t{5.2}{2.4}t{12.0}{3.6}
+\\{22.4}t{5.2}{6.8}
+\\{22.4}e{9.4}}
+
+\shapepar\bassshape
+This (ver 1.1) is a python script written by Man\-uel
+Gu\-ti\-er\-rez Al\-ga\-ba to produce shape definitions from rough
+`ascii art'.  There is no instruction manual, so here are Donald
+Arseneau's observations. There is not much of a user interface; look
+in proshap.py (which is a plain text file) and see how the various
+`test' shapes are defined (note the triple-double quotes).  Choose
+one of them, or add a new one, then change the line `test = test3' to select
+the desired picture.  Execute `python proshap.py' which will output a
+definition of "\bassshape" to the screen and to the file `result.tex'.
+The goul\-ish face you see here is the test3 shape.  You should be
+aware that the characters in the ascii input are treated as square,
+even though they are taller than they are wide, so the output shape
+specification will be taller and thinner than the input text.  There
+also seems to be a problem with all `bottoms': flat bottoms of text
+blocks and of holes are expanded downwards to end at a point.  Compare
+this face to the original face in proshap.py.  Warning: These
+instructions and observations are probably wrong; the author does not
+program in python so can't even read the code properly.  For now, look
+for proshap.py bundled with shapepar.sty.
+\end{minipage}
+\begin{minipage}{0.2\textwidth}
+
+\gdef\bassshape{{9.4}{0}b{9.4}
+\\{0}t{5.2}{6.8}
+\\{4.0}t{5.2}{6.8}
+\\{6.4}t{5.2}{6.8}
+\\{12.8}t{5.2}{6.8}
+\\{14.4}t{5.2}{6.8}
+\\{16.8}t{7.2}{5.6}st{10.8}{8.6}
+\\{17.6}t{6.2}{0.8}t{14.8}{8.2}
+\\{19.2}t{7.2}{2.4}t{12.0}{7.6}
+\\{22.4}t{7.2}{9.8}
+\\{22.4}e{9.4}}
+
+\shapepar\bassshape
+aarati (ver 1.1) is a python script written by Man\-uel
+Gu\-ti\-er\-rez Al\-ga\-ba to produce shape definitions from rough
+`ascii art'.  There is no instruction manual, so here are Donald
+Arseneau's observations. There is not much of a user interface; look
+in proshap.py (which is a plain text file) and see how the various
+`test' shapes are defined (note the triple-double quotes).  Choose
+one of them, or add a new one, then change the line `test = test3' to select
+the desired picture.  Execute `python proshap.py' which will output a
+definition of "\bassshape" to the screen and to the file `result.tex'.
+The goul\-ish face you see here is the test3 shape.  You should be
+aware that the characters in the ascii input are treated as square,
+even though they are taller than they are wide, so the output shape
+specification will be taller and thinner than the input text.  There
+also seems to be a problem with all `bottoms': flat bottoms of text
+blocks and of holes are expanded downwards to end at a point.  Compare
+this face to the original face in proshap.py.  Warning: These
+instructions and observations are probably wrong; the author does not
+program in python so can't even read the code properly.  For now, look
+for proshap.py bundled with shapepar.sty.
+\end{minipage}
+
+
+\end{document}
